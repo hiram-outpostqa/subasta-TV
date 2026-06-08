@@ -6,7 +6,7 @@
 <title>Subasta — Smart TV 70"</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
- 
+
   :root {
     --bg: #fbf6ee;
     --surface: #ffffff;
@@ -20,9 +20,9 @@
     --green: #1f9d6b;
     --red: #e5564b;
   }
- 
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
- 
+
   body {
     background: var(--bg);
     color: var(--text);
@@ -31,7 +31,7 @@
     min-height: 100vh;
     overflow-x: hidden;
   }
- 
+
   /* Fondo suave con puntitos */
   body::before {
     content: '';
@@ -42,7 +42,7 @@
     pointer-events: none;
     z-index: 0;
   }
- 
+
   .wrapper {
     position: relative;
     z-index: 1;
@@ -50,7 +50,7 @@
     margin: 0 auto;
     padding: 24px 20px 60px;
   }
- 
+
   /* Header */
   header {
     display: flex;
@@ -60,7 +60,7 @@
     border-bottom: 2px dashed var(--border);
     margin-bottom: 40px;
   }
- 
+
   .logo {
     font-family: 'Fredoka', sans-serif;
     font-weight: 700;
@@ -68,7 +68,7 @@
     letter-spacing: 1px;
     color: var(--accent);
   }
- 
+
   .live-badge {
     display: flex;
     align-items: center;
@@ -83,19 +83,19 @@
     color: var(--red);
     text-transform: uppercase;
   }
- 
+
   .live-dot {
     width: 7px; height: 7px;
     background: var(--red);
     border-radius: 50%;
     animation: pulse 1.4s ease-in-out infinite;
   }
- 
+
   @keyframes pulse {
     0%, 100% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.4; transform: scale(0.7); }
   }
- 
+
   /* Layout principal */
   .main-grid {
     display: grid;
@@ -103,11 +103,11 @@
     gap: 28px;
     align-items: start;
   }
- 
+
   @media (max-width: 800px) {
     .main-grid { grid-template-columns: 1fr; }
   }
- 
+
   .product-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -116,7 +116,7 @@
     margin-bottom: 24px;
     box-shadow: 0 10px 30px rgba(54, 48, 42, 0.06);
   }
- 
+
   .product-image {
     background: linear-gradient(135deg, #fff1e6 0%, #ffe3cc 45%, #ffe0ef 100%);
     height: 240px;
@@ -126,18 +126,18 @@
     position: relative;
     overflow: hidden;
   }
- 
+
   .tv-svg {
     width: 190px;
     filter: drop-shadow(0 12px 24px rgba(255,122,77,0.28));
     animation: float 3s ease-in-out infinite;
   }
- 
+
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-8px); }
   }
- 
+
   .product-image-label {
     position: absolute;
     top: 14px; left: 14px;
@@ -150,11 +150,11 @@
     padding: 5px 12px;
     border-radius: 100px;
   }
- 
+
   .product-info {
     padding: 26px;
   }
- 
+
   .product-title {
     font-family: 'Fredoka', sans-serif;
     font-weight: 700;
@@ -163,7 +163,7 @@
     line-height: 1.05;
     margin-bottom: 10px;
   }
- 
+
   .product-sub {
     color: var(--muted);
     font-size: 14px;
@@ -171,7 +171,7 @@
     line-height: 1.6;
     margin-bottom: 16px;
   }
- 
+
   .addon-note {
     background: var(--accent-soft);
     border: 1px solid rgba(255,122,77,0.25);
@@ -183,7 +183,7 @@
     border-radius: 12px;
     margin-bottom: 18px;
   }
- 
+
   .addon-link {
     color: var(--accent);
     font-weight: 800;
@@ -191,17 +191,17 @@
     text-underline-offset: 2px;
     white-space: nowrap;
   }
- 
+
   .addon-link:hover { color: #c2531f; }
- 
+
   .base-option .base-desc .addon-link { color: var(--accent); }
- 
+
   .specs-row {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
   }
- 
+
   .spec-tag {
     background: var(--surface2);
     border: 1px solid var(--border);
@@ -211,7 +211,7 @@
     padding: 6px 13px;
     border-radius: 100px;
   }
- 
+
   /* Temporizador */
   .timer-card {
     background: var(--surface);
@@ -221,7 +221,7 @@
     margin-bottom: 24px;
     box-shadow: 0 10px 30px rgba(54, 48, 42, 0.06);
   }
- 
+
   .timer-label {
     font-size: 11px;
     letter-spacing: 2px;
@@ -230,13 +230,13 @@
     color: var(--muted);
     margin-bottom: 16px;
   }
- 
+
   .timer-blocks {
     display: flex;
     gap: 12px;
     align-items: center;
   }
- 
+
   .timer-unit {
     flex: 1;
     text-align: center;
@@ -245,7 +245,7 @@
     border-radius: 14px;
     padding: 14px 8px 10px;
   }
- 
+
   .timer-num {
     font-family: 'Fredoka', sans-serif;
     font-weight: 600;
@@ -254,7 +254,7 @@
     line-height: 1;
     display: block;
   }
- 
+
   .timer-name {
     font-size: 10px;
     letter-spacing: 1px;
@@ -264,7 +264,7 @@
     display: block;
     margin-top: 6px;
   }
- 
+
   .timer-sep {
     font-family: 'Fredoka', sans-serif;
     font-size: 30px;
@@ -272,7 +272,7 @@
     line-height: 1;
     padding-bottom: 14px;
   }
- 
+
   .timer-deadline {
     margin-top: 14px;
     font-size: 12px;
@@ -280,7 +280,7 @@
     color: var(--muted);
     text-align: center;
   }
- 
+
   /* Panel derecho — Subasta */
   .bid-card {
     background: var(--surface);
@@ -292,7 +292,7 @@
     top: 24px;
     box-shadow: 0 10px 30px rgba(54, 48, 42, 0.06);
   }
- 
+
   .current-bid-label {
     font-size: 11px;
     letter-spacing: 2px;
@@ -301,7 +301,7 @@
     color: var(--muted);
     margin-bottom: 8px;
   }
- 
+
   .current-bid-amount {
     font-family: 'Fredoka', sans-serif;
     font-weight: 700;
@@ -311,12 +311,12 @@
     margin-bottom: 4px;
     transition: all 0.3s;
   }
- 
+
   .current-bid-amount.bump {
     transform: scale(1.05);
     color: var(--accent);
   }
- 
+
   .current-bidder {
     font-size: 13px;
     font-weight: 600;
@@ -324,12 +324,12 @@
     margin-bottom: 26px;
     line-height: 1.5;
   }
- 
+
   .current-bidder span {
     color: var(--text);
     font-weight: 800;
   }
- 
+
   .current-bidder .base-flag {
     display: inline-block;
     margin-top: 6px;
@@ -340,26 +340,26 @@
     padding: 3px 10px;
     border-radius: 100px;
   }
- 
+
   .divider {
     border: none;
     border-top: 2px dashed var(--border);
     margin: 22px 0;
   }
- 
+
   .bid-form-label {
     font-size: 14px;
     font-weight: 800;
     margin-bottom: 12px;
     color: var(--text);
   }
- 
+
   .bid-input-row {
     display: flex;
     gap: 10px;
     margin-bottom: 12px;
   }
- 
+
   .bid-name-input,
   .bid-amount-input {
     flex: 1;
@@ -374,19 +374,19 @@
     outline: none;
     transition: border-color 0.2s, background 0.2s;
   }
- 
+
   .bid-name-input:focus,
   .bid-amount-input:focus {
     border-color: var(--accent);
     background: #fff;
   }
- 
+
   .bid-name-input::placeholder,
   .bid-amount-input::placeholder {
     color: var(--muted);
     font-weight: 600;
   }
- 
+
   /* Opción de base */
   .base-option {
     display: flex;
@@ -400,14 +400,14 @@
     cursor: pointer;
     transition: all 0.2s;
   }
- 
+
   .base-option:hover { border-color: var(--accent); }
- 
+
   .base-option.checked {
     background: var(--accent-soft);
     border-color: var(--accent);
   }
- 
+
   .base-option input {
     width: 20px; height: 20px;
     accent-color: var(--accent);
@@ -415,22 +415,22 @@
     cursor: pointer;
     flex-shrink: 0;
   }
- 
+
   .base-option .base-text { flex: 1; }
- 
+
   .base-option .base-title {
     font-size: 14px;
     font-weight: 800;
     color: var(--text);
   }
- 
+
   .base-option .base-desc {
     font-size: 12px;
     font-weight: 600;
     color: var(--muted);
     margin-top: 2px;
   }
- 
+
   .base-option .base-price {
     font-family: 'Fredoka', sans-serif;
     font-weight: 600;
@@ -438,7 +438,7 @@
     color: var(--accent);
     flex-shrink: 0;
   }
- 
+
   .bid-btn {
     width: 100%;
     background: var(--accent);
@@ -453,15 +453,15 @@
     cursor: pointer;
     transition: all 0.2s;
   }
- 
+
   .bid-btn:hover {
     background: #ff6a37;
     transform: translateY(-2px);
     box-shadow: 0 10px 24px rgba(255,122,77,0.35);
   }
- 
+
   .bid-btn:active { transform: translateY(0); }
- 
+
   .bid-btn:disabled {
     background: var(--border);
     color: var(--muted);
@@ -469,7 +469,7 @@
     transform: none;
     box-shadow: none;
   }
- 
+
   .bid-hint {
     font-size: 12px;
     font-weight: 700;
@@ -477,7 +477,7 @@
     text-align: center;
     margin-top: 12px;
   }
- 
+
   .error-msg {
     background: rgba(229,86,75,0.08);
     border: 1px solid rgba(229,86,75,0.3);
@@ -489,7 +489,7 @@
     margin-top: 12px;
     display: none;
   }
- 
+
   /* Historial */
   .history-card {
     background: var(--surface);
@@ -498,20 +498,20 @@
     padding: 24px;
     box-shadow: 0 10px 30px rgba(54, 48, 42, 0.06);
   }
- 
+
   .history-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 18px;
   }
- 
+
   .history-title {
     font-family: 'Fredoka', sans-serif;
     font-weight: 600;
     font-size: 22px;
   }
- 
+
   .bid-count {
     font-weight: 700;
     font-size: 12px;
@@ -521,7 +521,7 @@
     padding: 5px 12px;
     border-radius: 100px;
   }
- 
+
   .bids-list {
     display: flex;
     flex-direction: column;
@@ -531,7 +531,7 @@
     scrollbar-width: thin;
     scrollbar-color: var(--border) transparent;
   }
- 
+
   .bid-item {
     display: flex;
     align-items: center;
@@ -543,17 +543,17 @@
     transition: all 0.3s;
     animation: slideIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
- 
+
   .bid-item.top {
     border-color: rgba(255,122,77,0.4);
     background: var(--accent-soft);
   }
- 
+
   @keyframes slideIn {
     from { opacity: 0; transform: translateX(20px); }
     to { opacity: 1; transform: translateX(0); }
   }
- 
+
   .bid-rank {
     font-weight: 800;
     font-size: 12px;
@@ -562,9 +562,9 @@
     text-align: center;
     flex-shrink: 0;
   }
- 
+
   .bid-rank.gold { font-size: 16px; }
- 
+
   .bid-avatar {
     width: 34px; height: 34px;
     border-radius: 50%;
@@ -575,12 +575,12 @@
     font-weight: 800;
     flex-shrink: 0;
   }
- 
+
   .bid-info {
     flex: 1;
     min-width: 0;
   }
- 
+
   .bid-name {
     font-size: 14px;
     font-weight: 800;
@@ -588,7 +588,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
- 
+
   .bid-name .base-mini {
     display: inline-block;
     background: rgba(255,122,77,0.16);
@@ -600,13 +600,13 @@
     margin-left: 6px;
     vertical-align: middle;
   }
- 
+
   .bid-time {
     font-size: 11px;
     font-weight: 600;
     color: var(--muted);
   }
- 
+
   .bid-amount-tag {
     font-family: 'Fredoka', sans-serif;
     font-weight: 600;
@@ -614,9 +614,9 @@
     color: var(--text);
     flex-shrink: 0;
   }
- 
+
   .bid-item.top .bid-amount-tag { color: var(--accent); }
- 
+
   .empty-state {
     text-align: center;
     padding: 40px 20px;
@@ -625,9 +625,9 @@
     font-weight: 600;
     line-height: 1.8;
   }
- 
+
   .empty-state .icon { font-size: 40px; margin-bottom: 12px; }
- 
+
   /* Toast */
   .toast {
     position: fixed;
@@ -646,9 +646,9 @@
     z-index: 999;
     white-space: nowrap;
   }
- 
+
   .toast.show { transform: translateX(-50%) translateY(0); }
- 
+
   /* Share section */
   .share-card {
     background: var(--surface);
@@ -659,22 +659,22 @@
     align-items: center;
     gap: 16px;
   }
- 
+
   .share-text { flex: 1; }
- 
+
   .share-text strong {
     display: block;
     font-size: 14px;
     font-weight: 800;
     margin-bottom: 2px;
   }
- 
+
   .share-text p {
     font-size: 12px;
     font-weight: 600;
     color: var(--muted);
   }
- 
+
   .copy-btn {
     background: var(--surface2);
     border: 1px solid var(--border);
@@ -688,7 +688,7 @@
     transition: all 0.2s;
     white-space: nowrap;
   }
- 
+
   .copy-btn:hover {
     border-color: var(--accent);
     color: var(--accent);
@@ -696,7 +696,7 @@
 </style>
 </head>
 <body>
- 
+
 <div class="wrapper">
   <header>
     <div class="logo">🛎️ Subasta</div>
@@ -705,11 +705,11 @@
       En vivo
     </div>
   </header>
- 
+
   <div class="main-grid">
     <!-- Columna izquierda -->
     <div class="left-panel">
- 
+
       <div class="product-card">
         <div class="product-image">
           <div class="product-image-label">📦 En subasta</div>
@@ -748,7 +748,7 @@
           </div>
         </div>
       </div>
- 
+
       <div class="timer-card">
         <div class="timer-label">⏱ Tiempo restante</div>
         <div class="timer-blocks">
@@ -774,7 +774,7 @@
         </div>
         <div class="timer-deadline">Cierra el viernes 12 de junio a las 12:00 pm (hora Mazatlán)</div>
       </div>
- 
+
       <div class="share-card">
         <div class="share-text">
           <strong>🔗 Comparte esta subasta</strong>
@@ -782,19 +782,19 @@
         </div>
         <button class="copy-btn" onclick="copyLink()">Copiar enlace</button>
       </div>
- 
+
     </div>
- 
+
     <!-- Columna derecha -->
     <div class="right-panel">
- 
+
       <div class="bid-card">
         <div class="current-bid-label">💰 Oferta más alta</div>
         <div class="current-bid-amount" id="currentBid">$3,500</div>
         <div class="current-bidder" id="currentBidder">Precio de salida — ¡sé el primero en ofertar!</div>
- 
+
         <hr class="divider">
- 
+
         <div class="bid-form-label">Hacer una oferta</div>
         <div class="bid-input-row">
           <input class="bid-name-input" type="text" id="bidName" placeholder="Tu nombre" maxlength="30">
@@ -802,7 +802,7 @@
         <div class="bid-input-row">
           <input class="bid-amount-input" type="number" id="bidAmount" placeholder="$ Monto en pesos" min="0">
         </div>
- 
+
         <label class="base-option" id="baseOption">
           <input type="checkbox" id="bidBase">
           <div class="base-text">
@@ -811,12 +811,12 @@
           </div>
           <div class="base-price">+$1,200</div>
         </label>
- 
+
         <button class="bid-btn" id="bidBtn" onclick="placeBid()">OFERTAR AHORA</button>
         <div class="error-msg" id="errorMsg">⚠️ Tu oferta debe ser mayor a la actual</div>
         <div class="bid-hint" id="bidHint">Mínimo: mayor a $3,500</div>
       </div>
- 
+
       <div class="history-card">
         <div class="history-header">
           <div class="history-title">Historial</div>
@@ -829,47 +829,90 @@
           </div>
         </div>
       </div>
- 
+
     </div>
   </div>
 </div>
- 
+
 <!-- Toast -->
 <div class="toast" id="toast">✓ ¡Oferta registrada!</div>
- 
+
 <script>
   // ─── Configuración ────────────────────────────────────
-  const STARTING_BID = 3500;          // precio de salida
+  // URL del backend (Google Apps Script desplegado como "Cualquier usuario")
+  const API_URL = 'https://script.google.com/macros/s/AKfycbxFqSf8ffKL2ys5iq5bjafdKQaYznuFaQRsYhIkQKUsy0pAxe4uutJBb7USz-USIODW5w/exec';
+
+  const STARTING_BID = 3500;          // precio de salida (debe coincidir con el Apps Script)
   const BASE_PRICE = 1200;            // costo de la base / mueble
+  const POLL_MS = 4000;               // cada cuánto se refresca (ms)
   // Cierre: viernes 12 de junio de 2026, 12:00 pm hora Mazatlán (UTC-7)
   const endTime = new Date('2026-06-12T12:00:00-07:00').getTime();
- 
+
   // ─── Estado ───────────────────────────────────────────
   let bids = [];
   let currentBidValue = STARTING_BID;
-  const STORAGE_KEY = 'subasta_tv_bids';
- 
+  let lastTopKey = '';                // para animar solo cuando cambia el líder
+  let sending = false;
+
   const COLORS = ['#ff7a4d','#ffb02e','#1f9d6b','#c77dff','#4cc9f0','#f72585','#7cc36b','#ff8fab'];
- 
-  // ─── Cargar ofertas guardadas ─────────────────────────
-  function loadBids() {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) {
-      bids = JSON.parse(saved);
-      bids.sort((a, b) => b.amount - a.amount);
-      if (bids.length > 0) {
-        currentBidValue = bids[0].amount;
-        updateCurrentBid(bids[0], false);
-        document.getElementById('bidHint').textContent = `Mínimo: mayor a $${currentBidValue.toLocaleString('es-MX')}`;
-      }
+
+  // Color e inicial deterministas a partir del nombre (igual en todos los dispositivos)
+  function colorFor(name) {
+    let h = 0;
+    for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
+    return COLORS[h % COLORS.length];
+  }
+
+  function decorate(list) {
+    return list.map(b => ({
+      name: b.name,
+      amount: Number(b.amount),
+      base: b.base === true || b.base === 'true' || b.base === 'TRUE' || b.base === 1,
+      time: Number(b.time),
+      color: colorFor(b.name || '?'),
+      initial: (b.name || '?').charAt(0).toUpperCase()
+    })).sort((a, b) => b.amount - a.amount);
+  }
+
+  // ─── Aplicar estado recibido del servidor ─────────────
+  function applyBids(serverBids, animate) {
+    bids = decorate(serverBids || []);
+    if (bids.length > 0) {
+      currentBidValue = bids[0].amount;
+      const topKey = bids[0].name + ':' + bids[0].amount + ':' + bids[0].base;
+      const changed = topKey !== lastTopKey;
+      updateCurrentBid(bids[0], animate && changed);
+      lastTopKey = topKey;
+    } else {
+      currentBidValue = STARTING_BID;
+      document.getElementById('currentBid').textContent = '$' + STARTING_BID.toLocaleString('es-MX');
+      document.getElementById('currentBidder').textContent = 'Precio de salida — ¡sé el primero en ofertar!';
+      lastTopKey = '';
     }
+    document.getElementById('bidHint').textContent = `Mínimo: mayor a $${currentBidValue.toLocaleString('es-MX')}`;
     renderBids();
   }
- 
-  function saveBids() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(bids));
+
+  function setConnected(ok) {
+    const dot = document.getElementById('connDot');
+    if (dot) dot.style.background = ok ? 'var(--green)' : 'var(--muted)';
   }
- 
+
+  // ─── Cargar ofertas desde el servidor ─────────────────
+  async function loadBids(animate) {
+    if (!API_URL || API_URL.indexOf('PEGA_AQUI') === 0) {
+      showError('Falta configurar API_URL con la URL del Apps Script.');
+      return;
+    }
+    try {
+      const res = await fetch(API_URL + '?action=list&t=' + Date.now());
+      const data = await res.json();
+      if (data && data.ok) { applyBids(data.bids, animate); setConnected(true); }
+    } catch (err) {
+      setConnected(false);
+    }
+  }
+
   // ─── Temporizador ─────────────────────────────────────
   function updateTimer() {
     const remaining = Math.max(0, endTime - Date.now());
@@ -877,79 +920,94 @@
     const hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
- 
+
     document.getElementById('days').textContent = String(days).padStart(2, '0');
     document.getElementById('hours').textContent = String(hours).padStart(2, '0');
     document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
     document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
- 
+
     if (remaining <= 0) {
       const btn = document.getElementById('bidBtn');
       btn.disabled = true;
       btn.textContent = 'SUBASTA CERRADA';
     }
   }
- 
+
   setInterval(updateTimer, 1000);
   updateTimer();
- 
+
   // ─── Opción de base (estilo visual) ───────────────────
   const baseCheckbox = document.getElementById('bidBase');
   baseCheckbox.addEventListener('change', () => {
     document.getElementById('baseOption').classList.toggle('checked', baseCheckbox.checked);
   });
- 
+
   // ─── Puja ──────────────────────────────────────────────
-  function placeBid() {
+  async function placeBid() {
+    if (sending) return;
     const nameEl = document.getElementById('bidName');
     const amountEl = document.getElementById('bidAmount');
     const errorEl = document.getElementById('errorMsg');
- 
+    const btn = document.getElementById('bidBtn');
+
     const name = nameEl.value.trim();
     const amount = parseFloat(amountEl.value);
     const withBase = document.getElementById('bidBase').checked;
- 
-    // Validaciones
+
+    // Validaciones rápidas en el navegador
     if (!name) { showError('Por favor escribe tu nombre'); return; }
     if (!amount || isNaN(amount)) { showError('Por favor escribe un monto'); return; }
     if (amount <= currentBidValue) { showError(`Tu oferta debe ser mayor a $${currentBidValue.toLocaleString('es-MX')}`); return; }
- 
+    if (Date.now() > endTime) { showError('La subasta ya cerró'); return; }
+
     errorEl.style.display = 'none';
- 
-    const bid = {
-      name,
-      amount,
-      base: withBase,
-      time: Date.now(),
-      color: COLORS[Math.floor(Math.random() * COLORS.length)],
-      initial: name.charAt(0).toUpperCase()
-    };
- 
-    bids.unshift(bid);
-    bids.sort((a, b) => b.amount - a.amount);
-    currentBidValue = bids[0].amount;
- 
-    saveBids();
-    updateCurrentBid(bids[0], true);
-    renderBids();
- 
-    const total = amount + (withBase ? BASE_PRICE : 0);
-    showToast(`¡${name} ofertó $${amount.toLocaleString('es-MX')}${withBase ? ' + base' : ''}!`);
- 
-    nameEl.value = '';
-    amountEl.value = '';
-    document.getElementById('bidBase').checked = false;
-    document.getElementById('baseOption').classList.remove('checked');
-    document.getElementById('bidHint').textContent = `Mínimo: mayor a $${currentBidValue.toLocaleString('es-MX')}`;
+    sending = true;
+    btn.disabled = true;
+    const prevText = btn.textContent;
+    btn.textContent = 'ENVIANDO...';
+
+    try {
+      const url = API_URL + '?action=add'
+        + '&name=' + encodeURIComponent(name)
+        + '&amount=' + encodeURIComponent(amount)
+        + '&base=' + (withBase ? 'true' : 'false')
+        + '&t=' + Date.now();
+      const res = await fetch(url);
+      const data = await res.json();
+      setConnected(true);
+
+      if (data && data.ok) {
+        applyBids(data.bids, true);
+        showToast(`¡${name} ofertó $${amount.toLocaleString('es-MX')}${withBase ? ' + base' : ''}!`);
+        nameEl.value = '';
+        amountEl.value = '';
+        document.getElementById('bidBase').checked = false;
+        document.getElementById('baseOption').classList.remove('checked');
+      } else if (data && data.error === 'outbid') {
+        applyBids(data.bids, false);
+        showError(`Alguien ofertó primero. Ahora el mínimo es mayor a $${Number(data.currentMax).toLocaleString('es-MX')}`);
+      } else if (data && data.error === 'closed') {
+        applyBids(data.bids, false);
+        showError('La subasta ya cerró');
+      } else {
+        showError('No se pudo registrar la oferta. Intenta de nuevo.');
+      }
+    } catch (err) {
+      setConnected(false);
+      showError('Sin conexión. Revisa tu internet e intenta de nuevo.');
+    } finally {
+      sending = false;
+      if (Date.now() <= endTime) { btn.disabled = false; btn.textContent = prevText; }
+    }
   }
- 
+
   function showError(msg) {
     const el = document.getElementById('errorMsg');
     el.textContent = '⚠️ ' + msg;
     el.style.display = 'block';
     setTimeout(() => el.style.display = 'none', 3000);
   }
- 
+
   function updateCurrentBid(bid, animate) {
     const el = document.getElementById('currentBid');
     el.textContent = '$' + bid.amount.toLocaleString('es-MX');
@@ -964,17 +1022,17 @@
       setTimeout(() => el.classList.remove('bump'), 400);
     }
   }
- 
+
   function renderBids() {
     const list = document.getElementById('bidsList');
     const count = document.getElementById('bidCount');
     count.textContent = bids.length + (bids.length === 1 ? ' oferta' : ' ofertas');
- 
+
     if (bids.length === 0) {
       list.innerHTML = `<div class="empty-state"><div class="icon">🏷️</div>No hay ofertas todavía.<br>¡Haz la primera!</div>`;
       return;
     }
- 
+
     list.innerHTML = bids.map((bid, i) => {
       const timeStr = new Date(bid.time).toLocaleString('es-MX', { hour: '2-digit', minute: '2-digit', day: 'numeric', month: 'short' });
       const baseTag = bid.base ? `<span class="base-mini">+ base</span>` : '';
@@ -991,28 +1049,35 @@
       `;
     }).join('');
   }
- 
+
   function showToast(msg) {
     const t = document.getElementById('toast');
     t.textContent = '✓ ' + msg;
     t.classList.add('show');
     setTimeout(() => t.classList.remove('show'), 3000);
   }
- 
+
   function copyLink() {
     navigator.clipboard.writeText(window.location.href).then(() => {
       showToast('Enlace copiado al portapapeles');
     });
   }
- 
+
   // Enter para pujar
   document.getElementById('bidAmount').addEventListener('keypress', e => {
     if (e.key === 'Enter') placeBid();
   });
- 
+
   // ─── Init ──────────────────────────────────────────────
-  loadBids();
+  loadBids(false);                 // primera carga
+  setInterval(() => {              // refresco automático (tiempo real)
+    if (!sending) loadBids(true);
+  }, POLL_MS);
+  // Refresca al volver a la pestaña
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) loadBids(true);
+  });
 </script>
- 
+
 </body>
 </html>
