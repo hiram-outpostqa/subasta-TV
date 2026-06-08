@@ -3,46 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Subasta — Smart TV</title>
+<title>Subasta — Smart TV 70"</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
-
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+ 
   :root {
-    --bg: #0a0a0f;
-    --surface: #111118;
-    --surface2: #18181f;
-    --border: #2a2a38;
-    --accent: #e8ff47;
-    --accent2: #ff6b35;
-    --text: #f0f0f8;
-    --muted: #6b6b80;
-    --green: #3dff9a;
-    --red: #ff4d6d;
+    --bg: #fbf6ee;
+    --surface: #ffffff;
+    --surface2: #f5efe4;
+    --border: #ece2d2;
+    --accent: #ff7a4d;      /* coral cálido */
+    --accent-soft: #fff0e8;
+    --accent2: #ffb02e;
+    --text: #36302a;
+    --muted: #9b8f7e;
+    --green: #1f9d6b;
+    --red: #e5564b;
   }
-
+ 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
     min-height: 100vh;
     overflow-x: hidden;
   }
-
-  /* Fondo con grid */
+ 
+  /* Fondo suave con puntitos */
   body::before {
     content: '';
     position: fixed;
     inset: 0;
-    background-image:
-      linear-gradient(rgba(232,255,71,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(232,255,71,0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
+    background-image: radial-gradient(rgba(255,122,77,0.08) 1.4px, transparent 1.4px);
+    background-size: 26px 26px;
     pointer-events: none;
     z-index: 0;
   }
-
+ 
   .wrapper {
     position: relative;
     z-index: 1;
@@ -50,51 +50,52 @@
     margin: 0 auto;
     padding: 24px 20px 60px;
   }
-
+ 
   /* Header */
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 32px;
-    border-bottom: 1px solid var(--border);
+    padding-bottom: 28px;
+    border-bottom: 2px dashed var(--border);
     margin-bottom: 40px;
   }
-
+ 
   .logo {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
     font-size: 28px;
-    letter-spacing: 4px;
+    letter-spacing: 1px;
     color: var(--accent);
   }
-
+ 
   .live-badge {
     display: flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 77, 109, 0.12);
-    border: 1px solid rgba(255, 77, 109, 0.3);
+    background: rgba(229, 86, 75, 0.1);
+    border: 1px solid rgba(229, 86, 75, 0.25);
     padding: 6px 14px;
     border-radius: 100px;
     font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 2px;
+    font-weight: 700;
+    letter-spacing: 1px;
     color: var(--red);
     text-transform: uppercase;
   }
-
+ 
   .live-dot {
     width: 7px; height: 7px;
     background: var(--red);
     border-radius: 50%;
     animation: pulse 1.4s ease-in-out infinite;
   }
-
+ 
   @keyframes pulse {
     0%, 100% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.4; transform: scale(0.7); }
   }
-
+ 
   /* Layout principal */
   .main-grid {
     display: grid;
@@ -102,24 +103,22 @@
     gap: 28px;
     align-items: start;
   }
-
+ 
   @media (max-width: 800px) {
     .main-grid { grid-template-columns: 1fr; }
   }
-
-  /* Panel izquierdo */
-  .left-panel {}
-
+ 
   .product-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 16px;
+    border-radius: 20px;
     overflow: hidden;
     margin-bottom: 24px;
+    box-shadow: 0 10px 30px rgba(54, 48, 42, 0.06);
   }
-
+ 
   .product-image {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background: linear-gradient(135deg, #fff1e6 0%, #ffe3cc 45%, #ffe0ef 100%);
     height: 240px;
     display: flex;
     align-items: center;
@@ -127,239 +126,342 @@
     position: relative;
     overflow: hidden;
   }
-
+ 
   .tv-svg {
-    width: 180px;
-    filter: drop-shadow(0 0 30px rgba(232,255,71,0.3));
+    width: 190px;
+    filter: drop-shadow(0 12px 24px rgba(255,122,77,0.28));
     animation: float 3s ease-in-out infinite;
   }
-
+ 
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-8px); }
   }
-
+ 
   .product-image-label {
     position: absolute;
     top: 14px; left: 14px;
     background: var(--accent);
-    color: #000;
+    color: #fff;
     font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 6px;
-  }
-
-  .product-info {
-    padding: 24px;
-  }
-
-  .product-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 36px;
+    font-weight: 800;
     letter-spacing: 1px;
-    line-height: 1;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 100px;
+  }
+ 
+  .product-info {
+    padding: 26px;
+  }
+ 
+  .product-title {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 34px;
+    letter-spacing: 0;
+    line-height: 1.05;
     margin-bottom: 10px;
   }
-
+ 
   .product-sub {
     color: var(--muted);
     font-size: 14px;
+    font-weight: 600;
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
-
+ 
+  .addon-note {
+    background: var(--accent-soft);
+    border: 1px solid rgba(255,122,77,0.25);
+    color: #c2531f;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+    padding: 10px 14px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+  }
+ 
+  .addon-link {
+    color: var(--accent);
+    font-weight: 800;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    white-space: nowrap;
+  }
+ 
+  .addon-link:hover { color: #c2531f; }
+ 
+  .base-option .base-desc .addon-link { color: var(--accent); }
+ 
   .specs-row {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
   }
-
+ 
   .spec-tag {
     background: var(--surface2);
     border: 1px solid var(--border);
     color: var(--muted);
     font-size: 12px;
-    font-family: 'DM Mono', monospace;
-    padding: 5px 12px;
-    border-radius: 6px;
+    font-weight: 700;
+    padding: 6px 13px;
+    border-radius: 100px;
   }
-
+ 
   /* Temporizador */
   .timer-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 16px;
+    border-radius: 20px;
     padding: 24px;
     margin-bottom: 24px;
+    box-shadow: 0 10px 30px rgba(54, 48, 42, 0.06);
   }
-
+ 
   .timer-label {
     font-size: 11px;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-transform: uppercase;
+    font-weight: 800;
     color: var(--muted);
     margin-bottom: 16px;
   }
-
+ 
   .timer-blocks {
     display: flex;
     gap: 12px;
     align-items: center;
   }
-
+ 
   .timer-unit {
     flex: 1;
     text-align: center;
     background: var(--surface2);
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 14px;
     padding: 14px 8px 10px;
   }
-
+ 
   .timer-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 42px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 40px;
     color: var(--accent);
     line-height: 1;
     display: block;
   }
-
+ 
   .timer-name {
     font-size: 10px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-transform: uppercase;
+    font-weight: 800;
     color: var(--muted);
     display: block;
-    margin-top: 4px;
+    margin-top: 6px;
   }
-
+ 
   .timer-sep {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 32px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 30px;
     color: var(--border);
     line-height: 1;
     padding-bottom: 14px;
   }
-
+ 
+  .timer-deadline {
+    margin-top: 14px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+    text-align: center;
+  }
+ 
   /* Panel derecho — Subasta */
-  .right-panel {}
-
   .bid-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 16px;
+    border-radius: 20px;
     padding: 28px;
     margin-bottom: 24px;
     position: sticky;
     top: 24px;
+    box-shadow: 0 10px 30px rgba(54, 48, 42, 0.06);
   }
-
+ 
   .current-bid-label {
     font-size: 11px;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-transform: uppercase;
+    font-weight: 800;
     color: var(--muted);
     margin-bottom: 8px;
   }
-
+ 
   .current-bid-amount {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 56px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 54px;
     color: var(--green);
     line-height: 1;
     margin-bottom: 4px;
     transition: all 0.3s;
   }
-
+ 
   .current-bid-amount.bump {
     transform: scale(1.05);
     color: var(--accent);
   }
-
+ 
   .current-bidder {
     font-size: 13px;
+    font-weight: 600;
     color: var(--muted);
-    margin-bottom: 28px;
-    font-family: 'DM Mono', monospace;
+    margin-bottom: 26px;
+    line-height: 1.5;
   }
-
+ 
   .current-bidder span {
     color: var(--text);
-    font-weight: 500;
+    font-weight: 800;
   }
-
+ 
+  .current-bidder .base-flag {
+    display: inline-block;
+    margin-top: 6px;
+    background: var(--accent-soft);
+    color: #c2531f;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+ 
   .divider {
     border: none;
-    border-top: 1px solid var(--border);
-    margin: 20px 0;
+    border-top: 2px dashed var(--border);
+    margin: 22px 0;
   }
-
+ 
   .bid-form-label {
-    font-size: 13px;
-    font-weight: 500;
-    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 12px;
     color: var(--text);
   }
-
+ 
   .bid-input-row {
     display: flex;
     gap: 10px;
     margin-bottom: 12px;
   }
-
+ 
   .bid-name-input,
   .bid-amount-input {
     flex: 1;
     background: var(--surface2);
     border: 1px solid var(--border);
     color: var(--text);
-    font-family: 'DM Mono', monospace;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
     font-size: 15px;
-    padding: 12px 16px;
-    border-radius: 10px;
+    padding: 13px 16px;
+    border-radius: 12px;
     outline: none;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, background 0.2s;
   }
-
+ 
   .bid-name-input:focus,
   .bid-amount-input:focus {
     border-color: var(--accent);
+    background: #fff;
   }
-
+ 
   .bid-name-input::placeholder,
   .bid-amount-input::placeholder {
     color: var(--muted);
+    font-weight: 600;
   }
-
+ 
+  /* Opción de base */
+  .base-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 13px 15px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+ 
+  .base-option:hover { border-color: var(--accent); }
+ 
+  .base-option.checked {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+  }
+ 
+  .base-option input {
+    width: 20px; height: 20px;
+    accent-color: var(--accent);
+    margin-top: 1px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+ 
+  .base-option .base-text { flex: 1; }
+ 
+  .base-option .base-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--text);
+  }
+ 
+  .base-option .base-desc {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+ 
+  .base-option .base-price {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+ 
   .bid-btn {
     width: 100%;
     background: var(--accent);
-    color: #000;
+    color: #fff;
     border: none;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px;
-    letter-spacing: 2px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 21px;
+    letter-spacing: 0.5px;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 14px;
     cursor: pointer;
     transition: all 0.2s;
-    position: relative;
-    overflow: hidden;
   }
-
+ 
   .bid-btn:hover {
-    background: #f5ff70;
-    transform: translateY(-1px);
-    box-shadow: 0 8px 24px rgba(232,255,71,0.25);
+    background: #ff6a37;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(255,122,77,0.35);
   }
-
-  .bid-btn:active {
-    transform: translateY(0);
-  }
-
+ 
+  .bid-btn:active { transform: translateY(0); }
+ 
   .bid-btn:disabled {
     background: var(--border);
     color: var(--muted);
@@ -367,57 +469,59 @@
     transform: none;
     box-shadow: none;
   }
-
+ 
   .bid-hint {
     font-size: 12px;
+    font-weight: 700;
     color: var(--muted);
     text-align: center;
-    margin-top: 10px;
-    font-family: 'DM Mono', monospace;
+    margin-top: 12px;
   }
-
+ 
   .error-msg {
-    background: rgba(255,77,109,0.1);
-    border: 1px solid rgba(255,77,109,0.3);
+    background: rgba(229,86,75,0.08);
+    border: 1px solid rgba(229,86,75,0.3);
     color: var(--red);
     font-size: 13px;
+    font-weight: 700;
     padding: 10px 14px;
-    border-radius: 8px;
-    margin-top: 10px;
+    border-radius: 10px;
+    margin-top: 12px;
     display: none;
   }
-
+ 
   /* Historial */
   .history-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 16px;
+    border-radius: 20px;
     padding: 24px;
+    box-shadow: 0 10px 30px rgba(54, 48, 42, 0.06);
   }
-
+ 
   .history-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 18px;
   }
-
+ 
   .history-title {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
     font-size: 22px;
-    letter-spacing: 1px;
   }
-
+ 
   .bid-count {
-    font-family: 'DM Mono', monospace;
+    font-weight: 700;
     font-size: 12px;
     color: var(--muted);
     background: var(--surface2);
     border: 1px solid var(--border);
-    padding: 4px 10px;
+    padding: 5px 12px;
     border-radius: 100px;
   }
-
+ 
   .bids-list {
     display: flex;
     flex-direction: column;
@@ -427,7 +531,7 @@
     scrollbar-width: thin;
     scrollbar-color: var(--border) transparent;
   }
-
+ 
   .bid-item {
     display: flex;
     align-items: center;
@@ -435,141 +539,156 @@
     padding: 12px 14px;
     background: var(--surface2);
     border: 1px solid transparent;
-    border-radius: 10px;
+    border-radius: 14px;
     transition: all 0.3s;
     animation: slideIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-
+ 
   .bid-item.top {
-    border-color: rgba(232,255,71,0.3);
-    background: rgba(232,255,71,0.05);
+    border-color: rgba(255,122,77,0.4);
+    background: var(--accent-soft);
   }
-
+ 
   @keyframes slideIn {
     from { opacity: 0; transform: translateX(20px); }
     to { opacity: 1; transform: translateX(0); }
   }
-
+ 
   .bid-rank {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
+    font-weight: 800;
+    font-size: 12px;
     color: var(--muted);
     width: 24px;
     text-align: center;
     flex-shrink: 0;
   }
-
-  .bid-rank.gold { color: var(--accent); font-weight: 700; }
-
+ 
+  .bid-rank.gold { font-size: 16px; }
+ 
   .bid-avatar {
-    width: 32px; height: 32px;
+    width: 34px; height: 34px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 800;
     flex-shrink: 0;
   }
-
+ 
   .bid-info {
     flex: 1;
     min-width: 0;
   }
-
+ 
   .bid-name {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 800;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-
+ 
+  .bid-name .base-mini {
+    display: inline-block;
+    background: rgba(255,122,77,0.16);
+    color: #c2531f;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 7px;
+    border-radius: 100px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+ 
   .bid-time {
     font-size: 11px;
+    font-weight: 600;
     color: var(--muted);
-    font-family: 'DM Mono', monospace;
   }
-
+ 
   .bid-amount-tag {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
     font-size: 20px;
     color: var(--text);
     flex-shrink: 0;
   }
-
+ 
   .bid-item.top .bid-amount-tag { color: var(--accent); }
-
+ 
   .empty-state {
     text-align: center;
     padding: 40px 20px;
     color: var(--muted);
     font-size: 14px;
+    font-weight: 600;
     line-height: 1.8;
   }
-
+ 
   .empty-state .icon { font-size: 40px; margin-bottom: 12px; }
-
+ 
   /* Toast */
   .toast {
     position: fixed;
     bottom: 28px;
     left: 50%;
-    transform: translateX(-50%) translateY(100px);
+    transform: translateX(-50%) translateY(120px);
     background: var(--green);
-    color: #000;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 600;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
     font-size: 14px;
-    padding: 12px 24px;
+    padding: 13px 26px;
     border-radius: 100px;
+    box-shadow: 0 12px 30px rgba(31,157,107,0.35);
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     z-index: 999;
     white-space: nowrap;
   }
-
+ 
   .toast.show { transform: translateX(-50%) translateY(0); }
-
+ 
   /* Share section */
   .share-card {
     background: var(--surface);
-    border: 1px dashed var(--border);
-    border-radius: 16px;
+    border: 2px dashed var(--border);
+    border-radius: 20px;
     padding: 20px 24px;
-    margin-top: 0;
     display: flex;
     align-items: center;
     gap: 16px;
   }
-
-  .share-text {
-    flex: 1;
-  }
-
+ 
+  .share-text { flex: 1; }
+ 
   .share-text strong {
     display: block;
     font-size: 14px;
+    font-weight: 800;
     margin-bottom: 2px;
   }
-
+ 
   .share-text p {
     font-size: 12px;
+    font-weight: 600;
     color: var(--muted);
   }
-
+ 
   .copy-btn {
     background: var(--surface2);
     border: 1px solid var(--border);
     color: var(--text);
-    font-family: 'DM Mono', monospace;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
     font-size: 12px;
-    padding: 8px 16px;
-    border-radius: 8px;
+    padding: 9px 16px;
+    border-radius: 100px;
     cursor: pointer;
     transition: all 0.2s;
     white-space: nowrap;
   }
-
+ 
   .copy-btn:hover {
     border-color: var(--accent);
     color: var(--accent);
@@ -577,65 +696,64 @@
 </style>
 </head>
 <body>
-
+ 
 <div class="wrapper">
   <header>
-    <div class="logo">SUBASTA ▸</div>
+    <div class="logo">🛎️ Subasta</div>
     <div class="live-badge">
       <div class="live-dot"></div>
       En vivo
     </div>
   </header>
-
+ 
   <div class="main-grid">
     <!-- Columna izquierda -->
     <div class="left-panel">
-
+ 
       <div class="product-card">
         <div class="product-image">
           <div class="product-image-label">📦 En subasta</div>
           <!-- TV SVG -->
           <svg class="tv-svg" viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="5" y="5" width="190" height="108" rx="10" fill="#1a1a2e" stroke="#e8ff47" stroke-width="2.5"/>
-            <rect x="15" y="13" width="170" height="92" rx="6" fill="#0a0a1a"/>
-            <!-- Pantalla con brillo -->
+            <rect x="5" y="5" width="190" height="108" rx="10" fill="#2b2b3a" stroke="#ff7a4d" stroke-width="2.5"/>
+            <rect x="15" y="13" width="170" height="92" rx="6" fill="#15151f"/>
             <rect x="15" y="13" width="170" height="92" rx="6" fill="url(#screen)"/>
             <defs>
               <linearGradient id="screen" x1="15" y1="13" x2="185" y2="105" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#1e3a5f"/>
-                <stop offset="50%" stop-color="#0a0a1a"/>
-                <stop offset="100%" stop-color="#1a0a2e"/>
+                <stop offset="0%" stop-color="#3a2a4f"/>
+                <stop offset="50%" stop-color="#15151f"/>
+                <stop offset="100%" stop-color="#2e1a2a"/>
               </linearGradient>
             </defs>
-            <!-- Logo en pantalla -->
-            <text x="100" y="68" text-anchor="middle" font-family="Arial" font-size="22" font-weight="bold" fill="#e8ff47" opacity="0.8">SMART TV</text>
-            <text x="100" y="84" text-anchor="middle" font-family="Arial" font-size="11" fill="#6b6b80">4K Ultra HD</text>
+            <text x="100" y="66" text-anchor="middle" font-family="Fredoka, Arial" font-size="22" font-weight="bold" fill="#ff7a4d" opacity="0.95">SMART TV</text>
+            <text x="100" y="84" text-anchor="middle" font-family="Fredoka, Arial" font-size="11" fill="#cdbfae">70" · 4K Ultra HD</text>
             <!-- Base -->
-            <rect x="85" y="113" width="30" height="8" rx="2" fill="#2a2a38"/>
-            <rect x="78" y="121" width="44" height="5" rx="2" fill="#2a2a38"/>
+            <rect x="85" y="113" width="30" height="8" rx="2" fill="#cdbfae"/>
+            <rect x="78" y="121" width="44" height="5" rx="2" fill="#cdbfae"/>
             <!-- Botones laterales -->
-            <rect x="196" y="35" width="3" height="12" rx="1.5" fill="#2a2a38"/>
-            <rect x="196" y="52" width="3" height="12" rx="1.5" fill="#2a2a38"/>
+            <rect x="196" y="35" width="3" height="12" rx="1.5" fill="#cdbfae"/>
+            <rect x="196" y="52" width="3" height="12" rx="1.5" fill="#cdbfae"/>
           </svg>
         </div>
         <div class="product-info">
-          <div class="product-title">Smart TV 55"</div>
-          <div class="product-sub">Televisor inteligente en excelente estado. Sin rayones, con control remoto original y caja. Funciona perfecto, la vendo porque compré una más grande.</div>
+          <div class="product-title">Smart TV 70"</div>
+          <div class="product-sub">Televisor inteligente de 70" en excelente estado con control remoto. Usada únicamente en nuestras instalaciones en plaza Golga.</div>
+          <div class="addon-note">➕ Base / mueble disponible aparte por $1,200 — puedes seleccionarla al ofertar. <a href="https://www.mercadolibre.com.mx/soportes-para-tvmonitor-3280-altura-ajustable-con-ruedas/up/MLMU809392016?pdp_filters=item_id:MLM2096270421" target="_blank" rel="noopener" class="addon-link">Ver base ↗</a></div>
           <div class="specs-row">
             <span class="spec-tag">4K UHD</span>
             <span class="spec-tag">Smart TV</span>
-            <span class="spec-tag">55 pulgadas</span>
+            <span class="spec-tag">70 pulgadas</span>
             <span class="spec-tag">WiFi</span>
             <span class="spec-tag">HDMI x3</span>
           </div>
         </div>
       </div>
-
+ 
       <div class="timer-card">
         <div class="timer-label">⏱ Tiempo restante</div>
         <div class="timer-blocks">
           <div class="timer-unit">
-            <span class="timer-num" id="days">07</span>
+            <span class="timer-num" id="days">04</span>
             <span class="timer-name">Días</span>
           </div>
           <div class="timer-sep">:</div>
@@ -654,8 +772,9 @@
             <span class="timer-name">Segs</span>
           </div>
         </div>
+        <div class="timer-deadline">Cierra el viernes 12 de junio a las 12:00 pm (hora Mazatlán)</div>
       </div>
-
+ 
       <div class="share-card">
         <div class="share-text">
           <strong>🔗 Comparte esta subasta</strong>
@@ -663,19 +782,19 @@
         </div>
         <button class="copy-btn" onclick="copyLink()">Copiar enlace</button>
       </div>
-
+ 
     </div>
-
+ 
     <!-- Columna derecha -->
     <div class="right-panel">
-
+ 
       <div class="bid-card">
         <div class="current-bid-label">💰 Oferta más alta</div>
-        <div class="current-bid-amount" id="currentBid">$0</div>
-        <div class="current-bidder">Por: <span id="currentBidder">Nadie aún — ¡sé el primero!</span></div>
-
+        <div class="current-bid-amount" id="currentBid">$3,500</div>
+        <div class="current-bidder" id="currentBidder">Precio de salida — ¡sé el primero en ofertar!</div>
+ 
         <hr class="divider">
-
+ 
         <div class="bid-form-label">Hacer una oferta</div>
         <div class="bid-input-row">
           <input class="bid-name-input" type="text" id="bidName" placeholder="Tu nombre" maxlength="30">
@@ -683,11 +802,21 @@
         <div class="bid-input-row">
           <input class="bid-amount-input" type="number" id="bidAmount" placeholder="$ Monto en pesos" min="0">
         </div>
+ 
+        <label class="base-option" id="baseOption">
+          <input type="checkbox" id="bidBase">
+          <div class="base-text">
+            <div class="base-title">Incluir la base / mueble</div>
+            <div class="base-desc">Se suma a tu oferta como complemento · <a href="https://www.mercadolibre.com.mx/soportes-para-tvmonitor-3280-altura-ajustable-con-ruedas/up/MLMU809392016?pdp_filters=item_id:MLM2096270421" target="_blank" rel="noopener" class="addon-link" onclick="event.stopPropagation()">ver base ↗</a></div>
+          </div>
+          <div class="base-price">+$1,200</div>
+        </label>
+ 
         <button class="bid-btn" id="bidBtn" onclick="placeBid()">OFERTAR AHORA</button>
         <div class="error-msg" id="errorMsg">⚠️ Tu oferta debe ser mayor a la actual</div>
-        <div class="bid-hint" id="bidHint">Mínimo: mayor a la oferta actual</div>
+        <div class="bid-hint" id="bidHint">Mínimo: mayor a $3,500</div>
       </div>
-
+ 
       <div class="history-card">
         <div class="history-header">
           <div class="history-title">Historial</div>
@@ -700,33 +829,28 @@
           </div>
         </div>
       </div>
-
+ 
     </div>
   </div>
 </div>
-
+ 
 <!-- Toast -->
 <div class="toast" id="toast">✓ ¡Oferta registrada!</div>
-
+ 
 <script>
+  // ─── Configuración ────────────────────────────────────
+  const STARTING_BID = 3500;          // precio de salida
+  const BASE_PRICE = 1200;            // costo de la base / mueble
+  // Cierre: viernes 12 de junio de 2026, 12:00 pm hora Mazatlán (UTC-7)
+  const endTime = new Date('2026-06-12T12:00:00-07:00').getTime();
+ 
   // ─── Estado ───────────────────────────────────────────
   let bids = [];
-  let currentBidValue = 0;
+  let currentBidValue = STARTING_BID;
   const STORAGE_KEY = 'subasta_tv_bids';
-  const END_KEY = 'subasta_tv_end';
-
-  const COLORS = ['#ff6b35','#e8ff47','#3dff9a','#c77dff','#4cc9f0','#f72585','#b5e48c','#ffd166'];
-
-  // ─── Fecha de fin: 7 días desde la primera vez ────────
-  let endTime;
-  const savedEnd = localStorage.getItem(END_KEY);
-  if (savedEnd) {
-    endTime = parseInt(savedEnd);
-  } else {
-    endTime = Date.now() + 7 * 24 * 60 * 60 * 1000;
-    localStorage.setItem(END_KEY, endTime);
-  }
-
+ 
+  const COLORS = ['#ff7a4d','#ffb02e','#1f9d6b','#c77dff','#4cc9f0','#f72585','#7cc36b','#ff8fab'];
+ 
   // ─── Cargar ofertas guardadas ─────────────────────────
   function loadBids() {
     const saved = localStorage.getItem(STORAGE_KEY);
@@ -736,15 +860,16 @@
       if (bids.length > 0) {
         currentBidValue = bids[0].amount;
         updateCurrentBid(bids[0], false);
+        document.getElementById('bidHint').textContent = `Mínimo: mayor a $${currentBidValue.toLocaleString('es-MX')}`;
       }
-      renderBids();
     }
+    renderBids();
   }
-
+ 
   function saveBids() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(bids));
   }
-
+ 
   // ─── Temporizador ─────────────────────────────────────
   function updateTimer() {
     const remaining = Math.max(0, endTime - Date.now());
@@ -752,94 +877,113 @@
     const hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
-
+ 
     document.getElementById('days').textContent = String(days).padStart(2, '0');
     document.getElementById('hours').textContent = String(hours).padStart(2, '0');
     document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
     document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-
+ 
     if (remaining <= 0) {
-      document.getElementById('bidBtn').disabled = true;
-      document.getElementById('bidBtn').textContent = 'SUBASTA CERRADA';
+      const btn = document.getElementById('bidBtn');
+      btn.disabled = true;
+      btn.textContent = 'SUBASTA CERRADA';
     }
   }
-
+ 
   setInterval(updateTimer, 1000);
   updateTimer();
-
+ 
+  // ─── Opción de base (estilo visual) ───────────────────
+  const baseCheckbox = document.getElementById('bidBase');
+  baseCheckbox.addEventListener('change', () => {
+    document.getElementById('baseOption').classList.toggle('checked', baseCheckbox.checked);
+  });
+ 
   // ─── Puja ──────────────────────────────────────────────
   function placeBid() {
     const nameEl = document.getElementById('bidName');
     const amountEl = document.getElementById('bidAmount');
     const errorEl = document.getElementById('errorMsg');
-
+ 
     const name = nameEl.value.trim();
     const amount = parseFloat(amountEl.value);
-
+    const withBase = document.getElementById('bidBase').checked;
+ 
     // Validaciones
     if (!name) { showError('Por favor escribe tu nombre'); return; }
     if (!amount || isNaN(amount)) { showError('Por favor escribe un monto'); return; }
     if (amount <= currentBidValue) { showError(`Tu oferta debe ser mayor a $${currentBidValue.toLocaleString('es-MX')}`); return; }
-
+ 
     errorEl.style.display = 'none';
-
+ 
     const bid = {
       name,
       amount,
+      base: withBase,
       time: Date.now(),
       color: COLORS[Math.floor(Math.random() * COLORS.length)],
       initial: name.charAt(0).toUpperCase()
     };
-
+ 
     bids.unshift(bid);
     bids.sort((a, b) => b.amount - a.amount);
-    currentBidValue = amount;
-
+    currentBidValue = bids[0].amount;
+ 
     saveBids();
-    updateCurrentBid(bid, true);
+    updateCurrentBid(bids[0], true);
     renderBids();
-    showToast(`¡${name} ofertó $${amount.toLocaleString('es-MX')}!`);
-
+ 
+    const total = amount + (withBase ? BASE_PRICE : 0);
+    showToast(`¡${name} ofertó $${amount.toLocaleString('es-MX')}${withBase ? ' + base' : ''}!`);
+ 
     nameEl.value = '';
     amountEl.value = '';
-    document.getElementById('bidHint').textContent = `Mínimo: $${(amount + 1).toLocaleString('es-MX')}`;
+    document.getElementById('bidBase').checked = false;
+    document.getElementById('baseOption').classList.remove('checked');
+    document.getElementById('bidHint').textContent = `Mínimo: mayor a $${currentBidValue.toLocaleString('es-MX')}`;
   }
-
+ 
   function showError(msg) {
     const el = document.getElementById('errorMsg');
     el.textContent = '⚠️ ' + msg;
     el.style.display = 'block';
     setTimeout(() => el.style.display = 'none', 3000);
   }
-
+ 
   function updateCurrentBid(bid, animate) {
     const el = document.getElementById('currentBid');
     el.textContent = '$' + bid.amount.toLocaleString('es-MX');
-    document.getElementById('currentBidder').innerHTML = `Por: <span>${bid.name}</span>`;
+    let html = `Por: <span>${bid.name}</span>`;
+    if (bid.base) {
+      const total = bid.amount + BASE_PRICE;
+      html += `<br><span class="base-flag">➕ Incluye base · Total $${total.toLocaleString('es-MX')}</span>`;
+    }
+    document.getElementById('currentBidder').innerHTML = html;
     if (animate) {
       el.classList.add('bump');
       setTimeout(() => el.classList.remove('bump'), 400);
     }
   }
-
+ 
   function renderBids() {
     const list = document.getElementById('bidsList');
     const count = document.getElementById('bidCount');
     count.textContent = bids.length + (bids.length === 1 ? ' oferta' : ' ofertas');
-
+ 
     if (bids.length === 0) {
       list.innerHTML = `<div class="empty-state"><div class="icon">🏷️</div>No hay ofertas todavía.<br>¡Haz la primera!</div>`;
       return;
     }
-
+ 
     list.innerHTML = bids.map((bid, i) => {
       const timeStr = new Date(bid.time).toLocaleString('es-MX', { hour: '2-digit', minute: '2-digit', day: 'numeric', month: 'short' });
+      const baseTag = bid.base ? `<span class="base-mini">+ base</span>` : '';
       return `
         <div class="bid-item ${i === 0 ? 'top' : ''}">
           <div class="bid-rank ${i === 0 ? 'gold' : ''}">${i === 0 ? '🥇' : '#' + (i + 1)}</div>
-          <div class="bid-avatar" style="background:${bid.color}22; border:1px solid ${bid.color}55; color:${bid.color}">${bid.initial}</div>
+          <div class="bid-avatar" style="background:${bid.color}22; border:1px solid ${bid.color}66; color:${bid.color}">${bid.initial}</div>
           <div class="bid-info">
-            <div class="bid-name">${bid.name}</div>
+            <div class="bid-name">${bid.name}${baseTag}</div>
             <div class="bid-time">${timeStr}</div>
           </div>
           <div class="bid-amount-tag">$${bid.amount.toLocaleString('es-MX')}</div>
@@ -847,28 +991,28 @@
       `;
     }).join('');
   }
-
+ 
   function showToast(msg) {
     const t = document.getElementById('toast');
     t.textContent = '✓ ' + msg;
     t.classList.add('show');
     setTimeout(() => t.classList.remove('show'), 3000);
   }
-
+ 
   function copyLink() {
     navigator.clipboard.writeText(window.location.href).then(() => {
       showToast('Enlace copiado al portapapeles');
     });
   }
-
+ 
   // Enter para pujar
   document.getElementById('bidAmount').addEventListener('keypress', e => {
     if (e.key === 'Enter') placeBid();
   });
-
+ 
   // ─── Init ──────────────────────────────────────────────
   loadBids();
 </script>
-
+ 
 </body>
 </html>
